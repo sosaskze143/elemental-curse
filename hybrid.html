@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كشف الهجين - لعنة العناصر</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>اكتشف الهجين الخاص بك</h1>
+        <p>اختر العناصر لمعرفة اسم الهجين الذي ستصبح عليه.</p>
+    </header>
+
+    <section>
+        <h2>دمج السحر</h2>
+        <label for="element1">العنصر الأول:</label>
+        <select id="element1">
+            <option value="نار">نار</option>
+            <option value="ماء">ماء</option>
+            <option value="هواء">هواء</option>
+        </select><br>
+
+        <label for="element2">العنصر الثاني:</label>
+        <select id="element2">
+            <option value="نار">نار</option>
+            <option value="ماء">ماء</option>
+            <option value="هواء">هواء</option>
+        </select><br>
+
+        <button onclick="mergeMagic()">اكتشف الهجين</button>
+        <p id="result"></p>
+    </section>
+
+    <footer>
+        <p>حقوق الطبع والنشر © 2025 لعنة العناصر</p>
+    </footer>
+
+    <script>
+        function mergeMagic() {
+            const element1 = document.getElementById('element1').value;
+            const element2 = document.getElementById('element2').value;
+            const result = document.getElementById('result');
+            const magicMap = {
+                "نار وماء": "فينار",
+                "ماء وهواء": "إيسن",
+                "نار وهواء": "أريان"
+            };
+
+            const key = `${element1} و${element2}`;
+            result.innerText = magicMap[key] || "دمج غير ممكن!";
+        }
+    </script>
+</body>
+</html>

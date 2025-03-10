@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتدى - لعنة العناصر</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>منتدى "لعنة العناصر"</h1>
+        <p>شارك آرائك حول عالم "لعنة العناصر" وناقش أحداث الرواية مع الآخرين!</p>
+    </header>
+
+    <section>
+        <h2>أضف تعليقك</h2>
+        <form id="commentForm">
+            <textarea id="commentText" placeholder="اكتب تعليقك هنا..." rows="5"></textarea><br>
+            <button type="submit">إرسال</button>
+        </form>
+        <h2>التعليقات</h2>
+        <div id="comments">
+            <!-- هنا ستظهر التعليقات -->
+        </div>
+    </section>
+
+    <footer>
+        <p>حقوق النشر © 2025 لعنة العناصر</p>
+    </footer>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let commentText = document.getElementById('commentText').value;
+            if (commentText) {
+                let newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `<p>${commentText}</p>`;
+                document.getElementById('comments').appendChild(newComment);
+                document.getElementById('commentText').value = ''; // مسح النص
+            }
+        });
+    </script>
+</body>
+</html>
